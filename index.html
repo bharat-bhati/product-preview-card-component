@@ -60,52 +60,70 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100vh;
-      }
-      body p {
-        font-size: 14px;
+        height: 91vh;
+        margin: auto;
+        padding: 8px;
       }
       #main-content {
         justify-content: space-around;
         display: flex;
+        flex: 1;
         /* align-content: flex-start; */
         flex-direction: column;
-        padding: 3rem 2rem;
+        padding: 0.8rem;
       }
       .perfume {
         font-family: "Montserrat", sans-serif;
         font-weight: 500;
-        padding-top: 50px;
-        margin-left: 35px;
+        letter-spacing: 2;
+        color: var(--Dark-grayish-blue);
       }
       .container {
         display: flex;
         align-items: stretch;
         background-color: white;
-        width: 700px;
+        width: 800px;
         height: 550px;
         border-radius: 15px;
       }
       .container h1 {
         font-family: "Fraunces", sans-serif;
-        font-size: 4rem;
+        font-size: 2rem;
         line-height: 0.8;
       }
-      .content p {
+      .disciption {
         font-family: "Montserrat", sans-serif;
-        flex-grow: 5;
         font-weight: 500;
-        font-size: 17px;
+        color: var(--Dark-grayish-blue);
+        font-size: 0.8rem;
       }
 
       .image {
-        background-image: url(images/image-product-desktop.jpg);
-        width: 700px;
-        height: 550px;
+        background: url(images/image-product-desktop.jpg) center center/cover;
         background-size: cover;
         border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        flex: 1;
       }
+      .price {
+        display: flex;
+        width: 70%;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .price p {
+        font-size: 2rem;
+        font-family: "Fraunces", sans-serif;
+        color: var(--Dark-cyan);
+      }
+      .price del {
+        font-size: 1rem;
+        font-family: "Montserrat", sans-serif;
+        text-decoration: line-through;
+        color: var(--Dark-grayish-blue);
+      }
+
       .btn {
         background-color: var(--Dark-cyan);
         display: flex;
@@ -116,8 +134,13 @@
         text-align: center;
         justify-content: center;
       }
-      .btn:hover{
-        background-color: hsl(158, 36%, 40%);;
+      .btn:hover {
+        background-color: hsl(158, 36%, 40%);
+      }
+      @media screen and (max-width: 376px) {
+        .container {
+          flex-direction: column;
+        }
       }
     </style>
   </head>
@@ -125,20 +148,22 @@
     <main class="container">
       <div class="image"></div>
       <div id="main-content">
-        <div>
-          <p class="Perfume">Perfume</p>
+        <div class="perfume">
+          <p>PERFUME</p>
         </div>
         <div>
           <h1>Gabrielle Essence Eau De Parfum</h1>
         </div>
-        <div>
+        <div class="disciption">
           <p>
             A floral, solar and voluptuous interpretation composed by Olivier
             Polge, Perfumer-Creator for the House of CHANEL.
           </p>
         </div>
-        <div class="Price">
-          <p>$149.99&nbsp;<del>$169.99</del></p>
+        <div class=""></div>
+        <div class="price">
+          <div><p>$149.99&nbsp;</p></div>
+          <div><del>$169.99</del></div>
         </div>
 
         <button class="btn">Add To Cart</button>
